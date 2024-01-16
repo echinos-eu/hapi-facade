@@ -1,0 +1,7 @@
+# for SSL support:
+#server:
+#  ssl:
+#    enabled: true
+#    key-store-type: PKCS12
+#    key-store: file:config/keystore
+#    key-store-password:
