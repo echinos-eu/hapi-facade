@@ -1,3 +1,6 @@
+server:
+  tomcat:
+    relaxed-query-chars: ['|']
 # for SSL support:
 #server:
 #  ssl:
