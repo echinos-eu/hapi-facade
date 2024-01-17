@@ -73,8 +73,5 @@ public class HapiServer extends RestfulServer {
     responseInterceptor.setResponseHeaderValue("Validation on ${line}: ${message} ${severity}");
     responseInterceptor.setResponseHeaderValueNoIssues("No issues detected");
     //registerInterceptor(responseInterceptor);
-
   }
-
-
 }

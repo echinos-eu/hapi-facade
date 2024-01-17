@@ -10,6 +10,7 @@ import ca.uhn.fhir.rest.annotation.ResourceParam;
 import ca.uhn.fhir.rest.annotation.Search;
 import ca.uhn.fhir.rest.annotation.Update;
 import ca.uhn.fhir.rest.api.MethodOutcome;
+import ca.uhn.fhir.rest.param.DateParam;
 import ca.uhn.fhir.rest.param.ReferenceParam;
 import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.param.TokenParam;
@@ -52,7 +53,11 @@ public class DocumentReferenceProvider implements IResourceProvider {
       @OptionalParam(name = DocumentReference.SP_PATIENT) ReferenceParam patient,
       @OptionalParam(name = DocumentReference.SP_TYPE) TokenParam type,
       @OptionalParam(name = DocumentReference.SP_CATEGORY) TokenParam category,
-      @OptionalParam(name = DocumentReference.SP_DATE) TokenParam date,
+
+      // this parameter is a SearchParameter from the IHD-MHD spec
+      // searches on: DocumentReference.content.attachment.creation
+      @OptionalParam(name = "creation") DateParam date,
+
       @OptionalParam(name = DocumentReference.SP_ENCOUNTER) ReferenceParam encounter) {
     List<DocumentReference> documentReferences = new ArrayList<>();
     //TODO: set meta.profile to: https://gematik.de/fhir/isik/v3/Dokumentenaustausch/StructureDefinition/ISiKDokumentenMetadaten
